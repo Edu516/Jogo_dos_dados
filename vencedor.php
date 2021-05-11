@@ -19,12 +19,20 @@
         $hd2;
         $cd1;
         $cd2;
-        $img = 'img/rolar.gif';
+        
         //gerando total da pontuação
         $total_humano  = $h_dado1 + $h_dado2;
         $total_com = $c_dado1 + $c_dado2;
 
-        
+        //Decidir vencedor
+        $vencedor;
+        if($total_humano > $total_com){
+            $vencedor="Jogador Veceu!!!";
+        }else if($total_humano == $total_com){
+            $vencedor="Partida Empatada!!!";
+        }else{
+            $vencedor="Máquina Venceu!!!";
+        }
         
         //escolhendo imagens
         switch ($h_dado1) {
@@ -134,6 +142,12 @@
     echo "<img src=$cd2>";
 
     ?></p>
-    <p>Total de Pontos: <?php echo $total_com  ?>
+    <p>Total de Pontos: <?php echo $total_com  ?></p>
+    <p></p>
+    <h2>Resultado: 
+    <i><?php
+        echo "$vencedor";
+    ?></i>
+    </h2>
 </body>
 </html>
